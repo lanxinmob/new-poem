@@ -1,5 +1,5 @@
 export const SITE = {
-  website: "https://astro-paper.pages.dev/", // replace this with your deployed domain
+  website: "https://new-poem-ten.vercel.app/", // replace this with your deployed domain
   author: "Lanxinmob",
   profile: "https://satnaing.dev/",
   desc: "我的第二梦乡,记录代码、计算机和生活的思考。",
