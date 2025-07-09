@@ -11,6 +11,7 @@ tags:
 ogImage: ''
 description: '虚拟化技术 训练测试集分割'
 pubDatetime: 2025-07-08T09:00:00Z
+toc: true
 ---
 
 ## 虚拟机vs容器
