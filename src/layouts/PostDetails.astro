@@ -21,6 +21,7 @@ export interface Props {
 }
 
 const { post, posts } = Astro.props;
+const { headings } = await render(post);
 
 const {
   title,
@@ -85,78 +86,101 @@ const nextPost =
 <Layout {...layoutProps}>
   <Header />
   <BackButton />
-  <main
-    id="main-content"
-    class:list={[
-      "mx-auto w-full max-w-app px-4 pb-12",
-      { "mt-8": !SITE.showBackButton },
-    ]}
-    data-pagefind-body
-  >
-    <h1
-      transition:name={slugifyStr(title)}
-      class="inline-block text-2xl font-bold text-accent sm:text-3xl"
+  <div class="relative px-4 pb-12 max-w-screen-xl mx-auto">
+    <main
+      id="main-content"
+      class="w-[720px] min-w-0 mx-auto"
+      data-pagefind-body
     >
-      {title}
-    </h1>
-    <div class="my-2 flex items-center gap-2">
-      <Datetime {pubDatetime} {modDatetime} {timezone} size="lg" />
-      <span aria-hidden="true" class="max-sm:hidden">|</span>
-      <EditPost {hideEditPost} {post} class="max-sm:hidden" />
-    </div>
-    <article
-      id="article"
-      class="app-prose mx-auto mt-8 max-w-app prose-pre:bg-(--shiki-light-bg) dark:prose-pre:bg-(--shiki-dark-bg)"
+      <h1
+        transition:name={slugifyStr(title)}
+        class="block text-2xl font-bold text-accent sm:text-3xl text-center"
+      >
+        {title}
+      </h1>
+      <div class="my-2 flex items-center gap-2">
+        <Datetime {pubDatetime} {modDatetime} {timezone} size="lg" />
+        <span aria-hidden="true" class="max-sm:hidden">|</span>
+        <EditPost {hideEditPost} {post} class="max-sm:hidden" />
+      </div>
+      <article
+        id="article"
+        class="app-prose mx-auto mt-8 max-w-app prose-pre:bg-(--shiki-light-bg) dark:prose-pre:bg-(--shiki-dark-bg)"
+      >
+        <Content />
+      </article>
+
+      <hr class="my-8 border-dashed" />
+
+      <EditPost class="sm:hidden" {hideEditPost} {post} />
+
+      <ul class="mt-4 mb-8 sm:my-8">
+        {tags.map(tag => <Tag tag={slugifyStr(tag)} tagName={tag} />)}
+      </ul>
+
+      <BackToTopButton />
+
+      <ShareLinks />
+
+      <hr class="my-6 border-dashed" />
+
+      <!-- Previous/Next Post Buttons -->
+      <div data-pagefind-ignore class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+        {
+          prevPost && (
+            <a
+              href={getPath(prevPost.id, prevPost.filePath)}
+              class="flex w-full gap-1 hover:opacity-75"
+            >
+              <IconChevronLeft class="inline-block flex-none rtl:rotate-180" />
+              <div>
+                <span>Previous Post</span>
+                <div class="text-sm text-accent/85">{prevPost.title}</div>
+              </div>
+            </a>
+          )
+        }
+        {
+          nextPost && (
+            <a
+              href={getPath(nextPost.id, nextPost.filePath)}
+              class="flex w-full justify-end gap-1 text-end hover:opacity-75 sm:col-start-2"
+            >
+              <div>
+                <span>Next Post</span>
+                <div class="text-sm text-accent/85">{nextPost.title}</div>
+              </div>
+              <IconChevronRight class="inline-block flex-none rtl:rotate-180" />
+            </a>
+          )
+        }
+      </div>
+    </main>
+    <aside
+      class="hidden lg:block w-64 fixed right-8 top-24"
+      style="z-index:20;"
     >
-      <Content />
-    </article>
+      <nav>
+        <h2 class="text-lg font-bold mb-2">目录</h2>
+        <ul class="space-y-1 text-sm" id="toc-list">
+          {headings
+            .filter(h => h.depth > 1 && h.depth < 4)
+            .map(h => (
+              <li>
+                <a
+                  href={`#${h.slug}`}
 
-    <hr class="my-8 border-dashed" />
-
-    <EditPost class="sm:hidden" {hideEditPost} {post} />
-
-    <ul class="mt-4 mb-8 sm:my-8">
-      {tags.map(tag => <Tag tag={slugifyStr(tag)} tagName={tag} />)}
-    </ul>
-
-    <BackToTopButton />
-
-    <ShareLinks />
-
-    <hr class="my-6 border-dashed" />
-
-    <!-- Previous/Next Post Buttons -->
-    <div data-pagefind-ignore class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-      {
-        prevPost && (
-          <a
-            href={getPath(prevPost.id, prevPost.filePath)}
-            class="flex w-full gap-1 hover:opacity-75"
-          >
-            <IconChevronLeft class="inline-block flex-none rtl:rotate-180" />
-            <div>
-              <span>Previous Post</span>
-              <div class="text-sm text-accent/85">{prevPost.title}</div>
-            </div>
-          </a>
-        )
-      }
-      {
-        nextPost && (
-          <a
-            href={getPath(nextPost.id, nextPost.filePath)}
-            class="flex w-full justify-end gap-1 text-end hover:opacity-75 sm:col-start-2"
-          >
-            <div>
-              <span>Next Post</span>
-              <div class="text-sm text-accent/85">{nextPost.title}</div>
-            </div>
-            <IconChevronRight class="inline-block flex-none rtl:rotate-180" />
-          </a>
-        )
-      }
-    </div>
-  </main>
+                  class="toc-link block px-2 py-1 rounded transition-colors"
+                  data-toc-link={h.slug}
+                >
+                  {h.text}
+                </a>
+              </li>
+            ))}
+        </ul>
+      </nav>
+    </aside>
+  </div>
   <Footer />
 </Layout>
 
@@ -265,6 +289,35 @@ const nextPost =
     }
   }
   attachCopyButtons();
+
+  /** 目录高亮当前章节 */
+  function highlightTocOnScroll() {
+    const tocLinks = Array.from(document.querySelectorAll('.toc-link'));
+    const headingEls = tocLinks.map(link => {
+      const id = link.getAttribute('href')?.slice(1);
+      return id ? document.getElementById(id) : null;
+    });
+
+    function onScroll() {
+      let activeIndex = -1;
+      for (let i = 0; i < headingEls.length; i++) {
+        const el = headingEls[i];
+        if (el && el.getBoundingClientRect().top - 100 < 0) {
+          activeIndex = i;
+        }
+      }
+      tocLinks.forEach((link, i) => {
+        if (i === activeIndex) {
+          link.classList.add('bg-accent/10', 'text-accent', 'font-bold');
+        } else {
+          link.classList.remove('bg-accent/10', 'text-accent', 'font-bold');
+        }
+      });
+    }
+    document.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+  highlightTocOnScroll();
 
   /* Go to page start after page swap */
   document.addEventListener("astro:after-swap", () =>
