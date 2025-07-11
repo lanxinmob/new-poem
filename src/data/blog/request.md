@@ -1,7 +1,7 @@
 ---
 author: 'Lanxinmob'
-title: '暑期日记5'
-postSlug: 'summer-diary-5'
+title: '暑期日记6'
+postSlug: 'summer-diary-6'
 featured: false
 draft: false
 tags:
