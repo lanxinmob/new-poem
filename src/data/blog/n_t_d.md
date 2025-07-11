@@ -8,7 +8,7 @@ tags:
   - '笔记'
 ogImage: ''
 description: 'numpy tensor dataframe'
-pubDatetime: 2025-07-010T09:00:00Z
+pubDatetime: 2025-07-10T09:00:00Z
 toc: true
 ---
 
