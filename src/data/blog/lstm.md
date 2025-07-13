@@ -6,6 +6,7 @@ featured: false
 draft: false
 tags:
   - '笔记'
+  - 'css'
 ogImage: ''
 description: '练习rnn,lstm,完善网站'
 pubDatetime: 2025-07-09T09:00:00Z

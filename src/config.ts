@@ -2,7 +2,7 @@ export const SITE = {
   website: "https://new-poem-ten.vercel.app/", // replace this with your deployed domain
   author: "Lanxinmob",
   profile: "https://satnaing.dev/",
-  desc: "我的第二梦乡,记录代码、计算机和生活的思考。",
+  desc: "我的第二幻想乡,记录代码、计算机和生活的思考。",
   title: "Lanxinmob Blog",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,

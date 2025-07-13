@@ -6,6 +6,9 @@ featured: false
 draft: false
 tags:
   - '笔记'
+  - 'Pandas'
+  - 'NumPy'
+  - 'PyTorch'
 ogImage: ''
 description: 'numpy tensor dataframe'
 pubDatetime: 2025-07-10T09:00:00Z
@@ -57,6 +60,7 @@ toc: true
   tensor_share = torch.from_numpy(np_array)
   #创建拷贝
   tensor_copy = torch.tensor(np_array)
+  #seq = torch.FloatTensor(preds[-window_size:])这种还转为了float32
   #tensor([[1.0000,3.0000],
   #        [2.0000,4.0000],
   #        [4.0000,6.0000]],dtype=float64)
@@ -169,11 +173,13 @@ toc: true
   ax.set_ylabel('Value')
   ax.grid(True, linestyle='--', alpha=0.6)#透明度
   ax.legend() 
+  #fig.autofmt_xdate() matplotlib 中一个非常方便的自动格式化函数，专门用来美化X轴上的日期标签
+  #plt.autoscale(axis='x',tight=True) 自动调整x范围
   
   plt.tight_layout()
   plt.show()
   ```
-
+  
 - `np.random.randn(100)` 生成了一个包含 100 个随机数的数组，这些数符合标准正态分布。
 - `np.linspace(0, 10, 100)`生成一个0到10的100个数均匀分布的数值序列。
 - `pd.date_range(...)` 生成日期范围，返回 Pandas 的 `DatetimeIndex` 对象。
