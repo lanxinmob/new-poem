@@ -10,7 +10,7 @@ tags:
   - 'NumPy'
   - 'PyTorch'
 ogImage: ''
-description: 'numpy tensor dataframe'
+description: 'numpy tensor pandas '
 pubDatetime: 2025-07-10T09:00:00Z
 toc: true
 ---
