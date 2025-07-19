@@ -9,7 +9,7 @@ tags:
   - 'Python'
 ogImage: ''
 description: 'oop'
-pubDatetime: 2025-07-14T09:00:00Z
+pubDatetime: 2025-07-15T09:00:00Z
 toc: true
 ---
 
@@ -69,6 +69,22 @@ toc: true
 - `@rest.setter`（rest是函数名也就是属性名）使用这个装饰器就可以在外部对属性直接进行赋值。
 #### 字符串表示形式
 - `str()`用户友好，易读
+
 - `repr()`开发者友好，精确，用于调试
+
 - 调用 `print()` 时会首先尝试寻找并调用该对象的`__str__()`方法，如果没有就回退，寻找并调用该对象的`__repr__()`方法
+
 - 在python的交互式环境 (>>>)中相反，总是调用`__repr__()` 来显示结果。
+
+- ```python
+  eval(repr(object)) == object
+  >>> repr(min)
+  '<built-in function min>'
+  
+  >>> from datetime import date
+  >>> tues = date(2011, 9, 12)
+  >>> repr(tues)
+  'datetime.date(2011, 9, 12)
+  >>> str(tues)
+  '2011-09-12'
+  ```
