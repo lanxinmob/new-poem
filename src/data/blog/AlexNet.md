@@ -1,7 +1,7 @@
 ---
 author: 'Lanxinmob'
 title: 'AlexNet深度学习奠基作'
-postSlug: 'summer-diary-15'
+postSlug: 'summer-diary-x1'
 featured: false
 draft: false
 tags:
@@ -27,7 +27,7 @@ toc: true
 
 - ImageNet 完整其实是更大不止120万，完整有八百九十万，一万多类，这样训练出来模型效果也会更好点，奇怪的是大家对ImageNet印象好像总是拿120万的图片。
 
-- SGD(随机梯度下降)调参比较难调，但是大家发现sgd的噪音对模型的泛化是有好处的，从这篇文章以后sgd成为了最主流的优化算法。虽然现在有了收敛速度更快的Adam/AdamW，但泛化能力上sgd还是保持着优势。
+- SGD(随机梯度下降)调参比较难调，但是大家发现sgd的噪音对模型的泛化是有好处的，从这篇文章以后sgd成为了最主流的优化算法。虽然现在有了收敛速度更快的Adam/AdamW，但泛化能力上sgd还是保持着优势.
 
 - > Notice the specialization exhibited by the two GPUs, a result of the restricted connec tivity described in Section 3.5. The kernels on GPU 1 are largely color-agnostic, while the kernels on on GPU 2 are largely color-specific. This kind of specialization occurs during every run and is independent of any particular random weight initialization (modulo a renumbering of the GPUs)
 
@@ -48,9 +48,11 @@ toc: true
 - 每个人都需要有自己的观点，你的观点不对没关系，没有人的观点是对的，但是你一定有自己独特的观点，这样子才能够不一样。如果你跟别人的观点都一样，那么你对这个世界贡献，可能就没那么多了。
 
   --李沐
-  
+
   
 ---
+
+## 后言:
 
 这里是李沐老师21年出的论文精读视频，因为我只是刚接触，这几年的工作并不熟悉，但就凭我刚接触的程度也能感受到其中许多东西在这几年再次发生了变化，有的继续顺延发展有的又回到了最初的方向。
 
