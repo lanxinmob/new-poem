@@ -9,7 +9,7 @@ tags:
   - '脚本'
 ogImage: ''
 description: 'paper link formatter'
-pubDatetime: 2025-07-22T09:00:00Z
+pubDatetime: 2025-07-23T09:00:00Z
 toc: true
 ---
 ### 脚本语言
