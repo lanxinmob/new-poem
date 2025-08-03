@@ -1,0 +1,49 @@
+---
+author: 'lanxinmob' 
+postSlug: 'vessel c-f'
+title: 'vessel classification and trajectories forcasting'
+tags:
+  - '笔记'
+  - '论文'
+description: '翻阅的一些论文'
+pubDatetime: 2025-08-02T09:00:00Z
+---
+# Articles
+# 1
+[The eXtreme Gradient Boosting Method Optimized by Hybridized Sine Cosine Metaheuristics for Ship Vessel Classification](https://link.springer.com/chapter/10.1007/978-981-99-9524-0_20)
+- 看不到full text, 用xgboost模型识别和分类海军军舰
+
+# 2
+[Marine Vessel Classification and Multivariate Trajectories Forecasting Using Metaheuristics-Optimized eXtreme Gradient Boosting and Recurrent Neural Networks](https://www.mdpi.com/2076-3417/13/16/9181)
+## Abstract
+- 使用增强粒子群优化算法（PSO）调优的 XGBoost 模型在船舶分类问题上达到了 99.72% 的总体准确率，而长短期记忆网络（LSTM）模型在船舶轨迹预测挑战中均方误差（MSE）达到 0.000098。对分类模型进行了严格的统计分析以验证结果，并将可解释人工智能原则应用于确定的最佳性能模型，以便更好地理解特征对模型决策的影响。
+
+- 基于密度的噪声空间聚类（DBSCAN）已被用于根据轨迹点数据对船舶行为进行建模。
+- 大轨迹”和“语义轨迹”的概念已经出现，指的是将多个语义方面与纯时空方面相结合的丰富的轨迹数据集
+- 在渔船领域，已经开发出了基于边缘计算的实时异常检测模型。[4,5](https://onlinelibrary.wiley.com/doi/full/10.1155/2021/5598988)[](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0283932)
+- 这些模型充分利用移动边缘节点和附近节点的信息，将历史轨迹提取检测模型与在线异常检测模型相结合，以检测异常情况。这种方法已被证明对渔船的实时异常检测有效，能提供有关有潜力的捕鱼地点和天气异常的有价值信息。 
+-作者提出了一个用于船舶分类和轨迹多变量预测的稳健框架,基于XGBoost的稳健机制用于船舶识别与分类；基于时间序列的方法，利用长短期记忆网络（LSTM）进行船舶轨迹预测；引入一种增强的粒子群优化算法（PSO），专门用于满足XGBoost和LSTM的超参数微调需求。 
+## related work
+- 经遗传算法优化的长短期记忆网络（LSTM）解决方案 [60](https://www.mdpi.com/2076-3417/13/16/9181#B60-applsci-13-09181) 并采用自动识别系统（AIS）数据，对深空低推力快速轨道进行了预测。
+## experiment
+- 准备轨迹数据集时去除了与轨迹无关的特征,剩余的特征包括经纬度、对地速度、对地航向和艏向。由于传输数据的不一致性，数据被重新采样为 60 秒的时间间隔，并使用多项式插值技术对缺失值进行插值。最后，从船舶艏向和对地速度中导出了两个额外的值。这些值代表了船舶在 X 和 Y 方向上的速度。引入这些特征有助于模型考虑艏向和轨迹之间的复杂关系，并提高了预测精度。
+
+# 3
+[VAR vs XGBoost: Performance of both models in AIS data reconstruction](https://www.sciencedirect.com/science/article/pii/S1877050924026450)
+
+
+# 4
+[A Dynamic Context-Aware Approach for Vessel Trajectory Prediction Based on Multi-Stage Deep Learning](https://ieeexplore.ieee.org/abstract/document/10510611)
+- 提出了一种多阶段预测方法，以提高预测的可解释性，包括转向状态预测、轨迹增强、轨迹预测以及动态上下文感知轨迹增强，而这一方面在以往的研究中并未受到太多关注。每个阶段，如转向状态预测和轨迹预测，都可以单独理解，这使得回溯决策过程更加容易。
+- 周围动态的交通环境也会影响船舶的运动意图，而这一点在以往的研究中也未得到广泛探讨。
+- 为应对这些挑战，首先使用基于反向 Transformer（iTransformer）的深度学习框架来预测船舶的转向状态。然后采用生成对抗网络（GAN）这一深度生成框架，以克服数据驱动的轨迹预测中样本量的限制，这不仅增强了可解释性，还将不确定性纳入预测之中。最后通过考虑船舶与周围交通环境之间的动态相互作用来改进预测轨迹。预测框架被称为 DCA - MSDL（基于多阶段深度学习的动态上下文感知方法）
+
+# 5
+[Vessel Trajectory Prediction in Maritime Transportation: Current Approaches and Beyond](https://ieeexplore.ieee.org/abstract/document/9843851)
+- 对近年来船舶轨迹预测研究的发展进行了细致的回顾与讨论。
+- 详细总结了海上运输中船舶轨迹预测研究使用的数据来源，并突出了可公开获取的数据集。
+- 审视了现有船舶轨迹建模研究中的预测方法及其优缺点。
+- 提炼并分析了处理船舶轨迹预测问题常用的辅助技术。
+
+# Dataset
+https://www.kaggle.com/datasets/eminserkanerdonmez/ais-dataset

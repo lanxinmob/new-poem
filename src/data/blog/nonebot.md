@@ -41,3 +41,11 @@ pubDatetime: 2025-07-31T09:00:00Z
 - **这个方案在 Docker Desktop for Windows/Mac 上不起作用**，主要是为 Linux服务器 环境设计的
 #### 网络转换
 - `host.docker.internal` 提供主机回环地址让容器可以直接连接而不破坏隔绝。
+
+## strip
+- `strip()` 是 `Python` 字符串的方法，用来去除字符串开头和结尾的空白字符（包括空格、换行符\n、制表符\t等）
+
+##  netstat -tuln | grep 8080 
+- `netstat -tuln` 的意思是列出本机所有正在监听的TCP和UDP端口，并用数字显示。
+- `grep 8080` 是只把包含8080这几个数字的行给找出来
+- 合起来就是查看现在服务器上有没有程序正在 8080 端口上监听
