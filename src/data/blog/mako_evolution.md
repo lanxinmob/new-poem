@@ -2,7 +2,7 @@
 author: 'Lanxinmob'
 title: 'mako_evolution'
 postSlug: 'mako_evolution'
-featured: false
+featured: true
 draft: false
 tags:
   - '开发记录'
@@ -16,6 +16,7 @@ toc: true
 ### 已开发功能
 
 - [x] 每日发送早安
+- [x] 以茉子身份与用户进行聊天
 
 - [x] 每日发送各种最新资讯
 

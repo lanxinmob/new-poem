@@ -2,7 +2,7 @@
 author: 'Lanxinmob'
 title: '暑期日记2'
 postSlug: 'summer-diary-2'
-featured: false
+featured: true
 draft: false
 tags: 
   - '笔记'

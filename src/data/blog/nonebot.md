@@ -2,12 +2,15 @@
 author: 'lanxinmob' 
 postSlug: 'mako-bot pro'
 title: '搭建mako-bot的总结'
+featured: true
+draft: false
 tags:
   - '笔记'
   - '计算机网络'
   - 'nonebot'
 description: '遇到的问题和收获'
 pubDatetime: 2025-07-31T09:00:00Z
+modDatetime: 2025-07-31T09:00:00Z
 ---
 # Nonebot2
 - 一个跨平台的 `python` 异步机器人框架，所谓异步就是避免被缓慢的操作卡死而可以将其“挂起”先去处理其他任务。

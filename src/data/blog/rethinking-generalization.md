@@ -2,6 +2,8 @@
 author: 'Lanxinmob'
 title: 'rethinking generalization'
 postSlug: 'summer-diary-17x'
+featured: true
+draft: false
 tags:
   - '笔记'
   - '论文'
