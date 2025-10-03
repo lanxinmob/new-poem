@@ -25,7 +25,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
   <main id="main-content" data-layout="index">
     <section id="hero" class="pt-8 pb-6">
       <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
-        Mingalaba
+        Lanxinmob | 秦岭脚下的守望者
       </h1>
       <a
         target="_blank"
@@ -43,22 +43,22 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
       </a>
 
       <p>
-        AstroPaper is a minimal, responsive, accessible and SEO-friendly Astro
-        blog theme. This theme follows best practices and provides accessibility
-        out of the box. Light and dark mode are supported by default. Moreover,
-        additional color schemes can also be configured.
+        欢迎来到我的博客。我专注于人工智能与计算机科学的深度探索，热衷于 Python、ML 和自然语言处理等领域。
+        从 React/NextJS 前端、 Python、Java 后端, Node.js/Docker/Linux 运维，到各类算法与数据库的实践与思考,这里都有我的开发记录与笔记。。
+        留得残荷听雨声。欢迎来此驻足交流。
       </p>
       <p class="mt-2">
-        Read the blog posts or check
-        <LinkButton
-          class="underline decoration-dashed underline-offset-4 hover:text-accent"
-          href="https://github.com/satnaing/astro-paper#readme"
-        >
-          README
-        </LinkButton> for more info.
+        阅读博客文章或查看 social link 以获取更多信息。
+      </p>
+      <p>
+        Welcome to my blog. I focus on in-depth exploration of artificial intelligence and computer science, and am passionate about fields such as Python, ML, and natural language processing.
+        From React/NextJS frontend, Python, Java backend, Node.js/Docker/Linux operation and maintenance, to the practice and thinking of various algorithms and databases, there are my development records and notes here.
+        "Leaving the withered lotus to listen to the sound of rain." Welcome to stop by and communicate.
+      </p>
+      <p class="mt-2">
+        Read the blog posts or check social link
       </p>
       {
-        // only display if at least one social link is enabled
         SOCIALS.length > 0 && (
           <div class="mt-4 flex flex-col sm:flex-row sm:items-center">
             <div class="me-2 mb-1 whitespace-nowrap sm:mb-0">Social Links:</div>
