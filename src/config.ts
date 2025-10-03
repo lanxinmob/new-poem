@@ -3,7 +3,7 @@ export const SITE = {
   author: "Lanxinmob",
   profile: "https://satnaing.dev/",
   desc: "我的第二幻想乡,记录代码、计算机和生活的思考。",
-  title: "Lanxinmob Blog",
+  title: "Lanxinmob",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
