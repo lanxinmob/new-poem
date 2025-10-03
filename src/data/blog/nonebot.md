@@ -5,6 +5,7 @@ title: '搭建mako-bot的总结'
 tags:
   - '笔记'
   - '计算机网络'
+  - 'nonebot'
 description: '遇到的问题和收获'
 pubDatetime: 2025-07-31T09:00:00Z
 ---
