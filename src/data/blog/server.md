@@ -44,7 +44,7 @@ pip freeze > requirements.txt
 ### 2. 更新代码仓库
 - 确保项目根目录下有一个`.gitignore`文件，防止不必要的文件被上传
 - 提交(commit)并推送(push)到你的GitHub私有仓库
- 
+
 
 ## 项目部署
 ### 1. 部署NoneBot2
@@ -116,7 +116,6 @@ WantedBy=multi-user.target
 ```
 - 按 `Ctrl + X `退出
 ### 2. 配置 Lagrange.OneBot service
-- 
 ```Bash
 sudo nano /etc/systemd/system/lagrange.service
 ```
