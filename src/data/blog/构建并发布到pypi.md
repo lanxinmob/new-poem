@@ -1,6 +1,6 @@
 ---
 author: 'lanxinmob' 
-postSlug: 'mako-bot pro'
+postSlug: 'python项目管理'
 title: 'Python 项目代码管理与发布流程'
 featured: true
 draft: false
@@ -60,7 +60,7 @@ uv build
 将构建好的包上传到 PyPI，让其他人可以通过 `pip` 或 `uv` 来安装你的库。
 
 ```
-twine upload dist/* -u token -p pypi-AgEIcHlwaS5vcmcCJDg3ZGEzYTYzLWYwOGEtNDg1MC1hNzUzLTkwNDdkZGVkNDM4NgACKlszLCIyNGE1MzEyMi01MzEwLTRiZDYtYWZkNy0yZTE3MTkwNWZmYWQiXQAABiAZ6rfYDXYfg00RCtXrcr-KNNX-tXZx5HbnSqXyHwhDMw
+twine upload dist/* -u token -p pypi-AgEI
 ```
 
 - **`twine upload dist/*`**: 命令 `twine` 上传 `dist/` 目录下的所有文件。
