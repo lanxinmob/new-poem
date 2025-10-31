@@ -1,3 +1,18 @@
+---
+author: 'Lanxinmob'
+title: '更换为Napca框架'
+postSlug: '更换为Napca框架'
+featured: false
+draft: false
+tags:
+  - '开发记录'
+  - 'napcat'
+ogImage: ''
+description: ''
+pubDatetime: 2025-10-15T09:00:00Z
+toc: true
+---
+
 [2025-10-15 20:16:01]: 安装位置:
 [2025-10-15 20:16:01]:   /root/Napcat
 [2025-10-15 20:16:01]:
