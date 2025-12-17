@@ -4,6 +4,7 @@ title: 'Attetion is all you need'
 postSlug: 'summer-diary-18'
 tags:
   - '笔记'
+  - '论文'
 ogImage: ''
 description: '李沐论文精读 Transformer'
 pubDatetime: 2025-07-25T09:00:00Z
