@@ -2,13 +2,13 @@
 author: 'lanxinmob' 
 postSlug: 'CS61B学习记录（week2）'
 title: 'CS61B学习记录（week2）'
-featured: true
+featured: false
 draft: false
 tags:
   - '笔记'
   - 'Java'
 description: ''
-pubDatetime: 2025-10-27T23:00:00Z
+pubDatetime: 2025-12-16T23:00:00Z
 ---
 
 # CS61B学习记录（week2）

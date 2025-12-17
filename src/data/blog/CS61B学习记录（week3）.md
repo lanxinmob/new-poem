@@ -2,7 +2,7 @@
 author: 'lanxinmob' 
 postSlug: 'CS61B学习记录（week3）'
 title: 'CS61B学习记录（week3）'
-featured: true
+featured: false
 draft: false
 tags:
   - '笔记'
