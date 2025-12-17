@@ -8,7 +8,7 @@ tags:
   - '笔记'
   - 'Java'
 description: ''
-pubDatetime: 2025-12-15T21:34:00Z
+pubDatetime: 2025-12-17T21:34:00Z
 ---
 
 ## Interface Inheritance
