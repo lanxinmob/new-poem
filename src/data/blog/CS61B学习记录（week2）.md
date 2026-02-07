@@ -11,8 +11,6 @@ description: ''
 pubDatetime: 2025-12-15T23:00:00Z
 ---
 
-# CS61B学习记录（week2）
-
 ### Public vs. Private
 
 为什么要使用 `private` 限制访问？

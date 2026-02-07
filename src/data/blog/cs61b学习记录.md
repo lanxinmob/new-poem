@@ -11,8 +11,6 @@ description: ''
 pubDatetime: 2025-10-19T23:00:00Z
 ---
 
-# CS61B学习记录（week1）
-
 ![image-20251016161901606](C:\Users\N\AppData\Roaming\Typora\typora-user-images\image-20251016161901606.png)
 
 还能说什么呢，直接泪目。
