@@ -166,6 +166,7 @@ sudo iptables -P OUTPUT ACCEPT
 # 2. 清空当前所有规则 (重置状态)
 sudo iptables -F
 sudo iptables -X
+sudo iptables -Z
 sudo iptables -t mangle -F
 sudo iptables -t nat -F
 
@@ -187,15 +188,18 @@ sudo iptables -A INPUT -p tcp --dport 80 -m string --string "cmd.exe" --algo bm 
 sudo iptables -A INPUT -p tcp --syn --dport 80 -m connlimit --connlimit-above 20 -j DROP
 sudo iptables -A INPUT -p tcp --syn --dport 443 -m connlimit --connlimit-above 20 -j DROP
 
-# 8. [Web] 限制新建连接速率
-# 限制 80 端口：1秒内最多新建 10 个
-sudo iptables -A INPUT -p tcp --dport 80 -m state --state NEW -m recent --set
-sudo iptables -A INPUT -p tcp --dport 80 -m state --state NEW -m recent --update --seconds 1 --hitcount 10 -j DROP
 
+# 8. [Web] 限制新建连接速率
+# 限制 80/443 端口：1秒内最多新建 10 个
+sudo iptables -A INPUT -p tcp --dport 80 -m state --state NEW -m recent --set --name WEB80
+sudo iptables -A INPUT -p tcp --dport 80 -m state --state NEW -m recent --update --seconds 1 --hitcount 10 --name WEB80 -j DROP
+
+sudo iptables -A INPUT -p tcp --dport 443 -m state --state NEW -m recent --set --name WEB443
+sudo iptables -A INPUT -p tcp --dport 443 -m state --state NEW -m recent --update --seconds 1 --hitcount 10 --name WEB443 -j DROP
 # 9. [SSH] 防暴力破解
 # 60秒内尝试连接超过 5 次，丢弃
-sudo iptables -A INPUT -p tcp --dport 22 -m state --state NEW -m recent --set
-sudo iptables -A INPUT -p tcp --dport 22 -m state --state NEW -m recent --update --seconds 60 --hitcount 5 -j DROP
+sudo iptables -A INPUT -p tcp --dport 22 -m state --state NEW -m recent --set --name SSH
+sudo iptables -A INPUT -p tcp --dport 22 -m state --state NEW -m recent --update --seconds 60 --hitcount 5 --name SSH -j DROP
 
 # 10. 允许 SSH
 # 只有未被第9步拦截的连接才会走到这里
@@ -209,7 +213,7 @@ sudo iptables -A INPUT -p tcp --dport 443 -j ACCEPT
 # 12. 不允许 Ping (防 Ping Flood)
 sudo iptables -A INPUT -p icmp --icmp-type 8 -j DROP
 # 或允许每秒 1 个 Ping，突发 10 个
-sudo iptables -A INPUT -p icmp --icmp-type 8 -m limit --limit 1/s --limit-burst 10 -j DROP
+sudo iptables -A INPUT -p icmp --icmp-type 8 -m limit --limit 1/s --limit-burst 10 -j ACCEPT
 
 # 13. 修改 TTL 伪装系统
 sudo iptables -t mangle -A OUTPUT -j TTL --ttl-set 128
@@ -217,6 +221,8 @@ sudo iptables -t mangle -A OUTPUT -j TTL --ttl-set 128
 # 14. 将 INPUT 链默认设为拒绝，关门。
 sudo iptables -P INPUT DROP
 
+sudo systemctl restart docker
+sudo systemctl restart fail2ban
 # 15. 保存规则
 sudo iptables-save > /etc/iptables/rules.v4
 ```
