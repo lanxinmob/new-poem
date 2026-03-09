@@ -15,7 +15,7 @@ toc: true
 
 ## The first circuit
 
-![image-20260310000148493](C:\Users\N\AppData\Roaming\Typora\typora-user-images\image-20260310000148493.png)
+###### ![image-20260310000148493](\poem\src\assets\images\image-20260310000148493.png)
 
 可能用于调试的功能
 
