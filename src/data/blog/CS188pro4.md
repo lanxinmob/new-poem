@@ -1,3 +1,19 @@
+---
+author: 'Lanxinmob'
+title: 'CS188项目记录（1）'
+postSlug: 'CS188项目记录（1）'
+featured: false
+draft: false
+tags:
+  - '笔记'
+  - 'CS188'
+  - '算法'
+ogImage: ''
+description: ''
+pubDatetime: 2026-02-19T01:32:00Z
+toc: true
+---
+
 所有 factor 共享同一个“大 assignment”
 
 枚举：
