@@ -5,7 +5,7 @@ title: "About"
 
 <div class="flex flex-col items-center text-center my-8">
   
-  <div class="w-48 h-48 overflow-hidden rounded-full shadow-lg border-4 border-skin-accent/20 mb-4">
+  <div class="w-48 h-48 rounded-full shadow-lg border-4 border-skin-accent/20 mb-4 flex items-center justify-center overflow-hidden bg-skin-fill">
     <img src="/assets/avatar.jpg" alt="Lanxinmob Avatar" class="min-w-full min-h-full object-cover object-center" >
   </div>
 
