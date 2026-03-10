@@ -1,7 +1,7 @@
 export const SITE = {
-  website: "https://new-poem-ten.vercel.app/", // replace this with your deployed domain
+  website: "https://lanxinmob.vercel.app/", 
   author: "Lanxinmob",
-  profile: "https://satnaing.dev/",
+  profile: "",
   desc: "我的第二幻想乡,记录代码、计算机和生活的思考。",
   title: "Lanxinmob",
   ogImage: "astropaper-og.jpg",
