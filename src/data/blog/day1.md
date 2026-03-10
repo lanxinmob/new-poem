@@ -15,7 +15,7 @@ toc: true
 
 ## The first circuit
 
-###### ![image-20260310000148493](./images/image-20260310000148493.png)
+###### ![image](./images/image-20260310000148493.png)
 
 可能用于调试的功能
 
