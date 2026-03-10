@@ -14,7 +14,7 @@ export const SITE = {
   editPost: {
     enabled: true,
     text: "Edit page",
-    url: "https://github.com/lanxinmob/new-poem",
+    url: "https://github.com/lanxinmob/new-poem/",
   },
   dynamicOgImage: true,
   dir: "ltr", // "rtl" | "auto"
