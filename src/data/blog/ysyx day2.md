@@ -21,11 +21,11 @@ toc: true
 
 ## 异或门的几种尝试
 
-![image-20260312131859943](D:/poem/src/data/blog/images/image-20260312131859943.png)
+![image-20260312131859943](./images/image-20260312131859943.png)
 
 使用16个晶体管的门电路
 
-![image-20260312131901552](D:/poem/src/data/blog/images/image-20260312131901552.png)
+![image-20260312131901552](./images/image-20260312131901552.png)
 
 使用18个晶体管的门电路
 
