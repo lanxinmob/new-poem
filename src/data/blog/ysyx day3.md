@@ -8,7 +8,7 @@ tags:
   - '笔记'
   - 'ysyx'
 ogImage: ''
-description: 'f3'
+description: 'f3原码、反码加法器'
 pubDatetime: 2026-03-13T23:00:00Z
 toc: true
 ---
