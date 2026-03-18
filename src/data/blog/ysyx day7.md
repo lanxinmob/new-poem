@@ -8,7 +8,7 @@ tags:
   - '笔记'
   - 'ysyx'
 ogImage: ''
-description: 'f5'
+description: 'f5li指令'
 pubDatetime: 2026-03-17T12:00:00Z
 toc: true 
 ---
@@ -42,4 +42,6 @@ toc: true
 ## 实现仅支持li指令的sCPU
 
 ![image-20260317231645421](./images/image-20260317231645421.png)
+
+
 
