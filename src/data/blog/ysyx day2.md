@@ -31,6 +31,53 @@ toc: true
 
 经过两天各种尝试还是没能找到14个晶体管实现的方案，先继续学习 f3 剩余内容。
 
+----
+
+几天后，在ysyx交流群中得到启发，结合学校里同时学习的数电内容中的
+
+**德·摩根定律**：
+
+- $$\overline{X + Y} = \overline{X} \cdot \overline{Y}$$
+
+- $$\overline{X \cdot Y} = \overline{X} + \overline{Y}$$
+
+异或的**最小项**表达式：
+
+-  $$ A \oplus B = A\overline{B} + \overline{A}B $$
+
+首先利用互补律加入为 $0$ 的项，并进行因式分解：
+$$
+\begin{aligned}
+A \oplus B &= A\overline{B} + \overline{A}B \\
+&= A\overline{B} + A\overline{A} + \overline{A}B + B\overline{B} \\
+&= A(\overline{B} + \overline{A}) + B(\overline{A} + \overline{B}) \\
+&= (A + B)(\overline{A} + \overline{B})
+\end{aligned}
+$$
+对右侧括号使用德·摩根定律（$\overline{A} + \overline{B} = \overline{AB}$）：
+$$
+\begin{aligned}
+&= (A + B)\overline{AB} \\
+&= \overline{AB}(A + B)
+\end{aligned}
+$$
+
+对 $(A+B)$ 整体加上双重否定号：
+$$
+\begin{aligned}
+&= \overline{AB} \cdot \overline{\overline{(A+B)}}
+\end{aligned}
+$$
+再次整体逆向使用德·摩根定律（$\overline{X} \cdot \overline{Y} = \overline{X + Y}$）：
+$$
+\begin{aligned}
+&= \overline{AB + \overline{(A+B)}}
+\end{aligned}
+$$
+
+
+![image-20260322221553426](./images/image-20260322221553426.png)
+
 ## 异或门的全定制电路
 
 A 输入为1 时，B由左侧电路输入，
