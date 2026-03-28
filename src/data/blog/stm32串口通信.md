@@ -42,7 +42,7 @@ toc: true
 
 *   **触发机制**: 每接收或发送一字节数据时触发一次中断。
 *   **回调函数**: 每次接收完成后会执行 `HAL_UART_RxCpltCallback` 回调函数。
-*   ![image-20260308134401916](C:\Users\N\AppData\Roaming\Typora\typora-user-images\image-20260308134401916.png)
+*   ![image-20260308134401916](./images/image-20260308134401916.png)
     *   开启了 `USART2 global interrupt` (USART2 全局中断)。
     *   在 `main` 函数前调用 `HAL_UART_Receive_IT(&huart2, receiveData, 2);` 启动中断接收（接收长度为2）。
     *   在 `HAL_UART_RxCpltCallback` 中，接收到数据后，通过判断 `receiveData[0]` 和 `receiveData[1]` 的值来控制 LED 灯的亮灭。
@@ -59,7 +59,7 @@ toc: true
 
 *   **原理**: 当串口接收完一帧数据包后，总线出现空闲状态时触发中断。适合接收长度未知的数据包。
 *   **回调函数**: 改为调用 `HAL_UARTEx_RxEventCallback` 回调函数。
-*   ![image-20260308134524006](C:\Users\N\AppData\Roaming\Typora\typora-user-images\image-20260308134524006.png)
+*   ![image-20260308134524006](./images/image-20260308134524006.png)
     *   使用了 `HAL_UARTEx_ReceiveToIdle_DMA(&huart2, receiveData, sizeof(receiveData));` 开启空闲中断接收。
     *   在 `HAL_UARTEx_RxEventCallback` 中，`Size` 参数表示实际接收到的数据长度。然后调用 `HAL_UART_Transmit_DMA(&huart2, receiveData, Size);` 将接收到的数据发送回去。
     *   同样，在回调末尾需要重新开启接收 `HAL_UARTEx_ReceiveToIdle_DMA(...)`。

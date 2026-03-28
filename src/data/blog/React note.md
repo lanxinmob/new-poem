@@ -14,9 +14,9 @@ pubDatetime: 2026-01-17T09:00:00Z
 toc: true
 ---
 
-### 渲染列表
+## 渲染列表
 
-**在 map() 循环里，**紧跟在 return 后面的第一个标签（无论是 HTML 标签还是自定义组件），必须拥有 key。
+**在 map() 循环里，** 紧跟在 return 后面的第一个标签（无论是 HTML 标签还是自定义组件），必须拥有 key。
 
 ```javascript
 import { recipes } from './data.js';
@@ -48,7 +48,7 @@ export default function RecipeList() {
 }
 ```
 
-### 保持组件的存粹
+#### 保持组件的存粹
 
 - 一个组件必须是纯粹的，就意味着：
   - **只负责自己的任务。** 它不会更改在该函数调用前就已存在的对象或变量。
@@ -56,7 +56,7 @@ export default function RecipeList() {
   - 你不应该改变任何用于组件渲染的输入。这包括 props、state 和 context。通过设置 state 来更新界面，而不要改变预先存在的对象。
   - 需要时可以创建局部变量来满足突变需求。
 
-### state 如同一张快照
+#### state 如同一张快照
 
 ```javascript
 import { useState } from 'react';
@@ -81,7 +81,7 @@ export default function Counter() {
 
 **一个 state 变量的值永远不会在一次渲染的内部发生变化，** 即使其事件处理函数的代码是异步的。在 **那次渲染的** `onClick` 内部，`number` 的值即使在调用 `setNumber(number + 5)` 之后也还是 `0`。它的值在 React 通过调用你的组件“获取 `UI` 的快照”时就被“固定”了。
 
-### 在下次渲染前多次更新同一个 state
+#### 在下次渲染前多次更新同一个 state
 
 **React 会等到事件处理函数中的** 所有 **代码都运行完毕再处理你的 state 更新。** 
 

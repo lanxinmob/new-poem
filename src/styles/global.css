@@ -38,7 +38,19 @@ html[data-theme="dark"] {
     @apply overflow-y-scroll scroll-smooth;
   }
   body {
-    @apply flex min-h-svh flex-col bg-background font-mono text-foreground selection:bg-accent/75 selection:text-background;
+    @apply flex min-h-svh flex-col bg-background text-foreground selection:bg-accent/75 selection:text-background;
+
+    font-family:
+      "Source Han Sans SC",
+      "Noto Sans SC",
+      "PingFang SC",
+      "Microsoft YaHei",
+      system-ui,
+      -apple-system,
+      sans-serif;
+
+    font-size: 16px;
+    line-height: 1.75;
   }
   a,
   button {

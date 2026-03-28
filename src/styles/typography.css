@@ -1,7 +1,13 @@
 @plugin '@tailwindcss/typography';
 
 @layer base {
-  /* ===== Override default Tailwind Typography styles ===== */
+  .app-prose h2 {
+    font-size: 1.5rem;
+  }
+
+  .app-prose h3 {
+    font-size: 1.25rem;
+  }
   .app-prose {
     @apply prose;
 
@@ -10,11 +16,8 @@
     h3,
     h4,
     th {
-      @apply mb-3 text-foreground;
-    }
-
-    h3 {
-      @apply italic;
+      @apply mb-3 text-foreground font-semibold tracking-tight;
+      font-style: normal;
     }
 
     p,
@@ -27,30 +30,43 @@
       @apply text-foreground;
     }
 
-    a {
-      @apply break-words text-foreground decoration-dashed underline-offset-4 hover:text-accent focus-visible:no-underline;
+    p {
+      @apply leading-7 text-[16px];
     }
 
+    strong {
+      @apply font-semibold;
+    }
+
+    /* ===== 链接 ===== */
+    a {
+      @apply break-words text-accent decoration-dashed underline-offset-4 hover:opacity-80;
+    }
+
+    /* ===== 列表 ===== */
     ul {
       @apply overflow-x-clip;
     }
 
     li {
-      @apply marker:text-accent;
+      @apply marker:text-accent leading-7;
     }
 
+    /* ===== 分割线 ===== */
     hr {
       @apply border-border;
     }
 
+    /* ===== 图片 ===== */
     img {
-      @apply mx-auto border border-border;
+      @apply mx-auto border border-border rounded-lg;
     }
 
     figcaption {
-      @apply opacity-75;
+      @apply opacity-70 text-sm;
     }
 
+    /* ===== 表格 ===== */
     table {
       th,
       td {
@@ -58,7 +74,7 @@
       }
 
       th {
-        @apply py-1.5;
+        @apply py-2 font-semibold;
       }
 
       code {
@@ -66,54 +82,33 @@
       }
     }
 
+    /* ===== 行内代码 ===== */
     code {
-      @apply rounded bg-muted/75 p-1 break-words text-foreground before:content-none after:content-none;
+      @apply rounded bg-muted/60 px-1.5 py-0.5 text-[14px];
+      font-family: "JetBrains Mono", "Fira Code", monospace;
     }
 
     .astro-code code {
       @apply bg-inherit p-0;
     }
 
+    /* ===== 引用 ===== */
     blockquote {
-      @apply border-s-accent/80 break-words opacity-80;
+      @apply border-s-4 border-accent pl-4 opacity-90;
     }
 
+    /* ===== 折叠 ===== */
     details {
-      @apply inline-block cursor-pointer text-foreground select-none [&_p]:hidden [&_ul]:!my-0;
+      @apply inline-block cursor-pointer select-none [&_p]:hidden [&_ul]:!my-0;
     }
 
     summary {
-      @apply focus-visible:no-underline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent focus-visible:outline-dashed;
+      @apply focus-visible:no-underline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-dashed;
     }
 
+    /* ===== 代码块 ===== */
     pre {
-      @apply focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-dashed;
-    }
-  }
-
-  /* ===== Code Blocks & Syntax Highlighting ===== */
-  .astro-code {
-    @apply border bg-(--shiki-light-bg) text-(--shiki-light) outline-border [&_span]:text-(--shiki-light);
-  }
-
-  html[data-theme="dark"] .astro-code {
-    @apply bg-(--shiki-dark-bg) text-(--shiki-dark) [&_span]:text-(--shiki-dark);
-  }
-
-  /* Styles for Shiki transformers */
-  /* https://shiki.style/packages/transformers */
-  .astro-code {
-    .line.diff.add {
-      @apply relative *:bg-green-500/20 before:absolute before:-left-3 before:text-green-500 before:content-['+'];
-    }
-    .line.diff.remove {
-      @apply relative *:bg-red-500/30 before:absolute before:-left-3 before:text-red-500 before:content-['-'];
-    }
-    .line.highlighted {
-      @apply *:!bg-slate-400/20;
-    }
-    .highlighted-word {
-      @apply rounded-sm border border-border px-0.5 py-px;
+      @apply rounded-lg p-4;
     }
   }
 }
