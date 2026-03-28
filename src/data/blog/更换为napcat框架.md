@@ -17,7 +17,7 @@ toc: true
 
 之前使用的 Lagrange.onebot 如图所示暂时终止了，于是打算更换到 napcat 框架。
 
-![image-20251112193245162](C:\Users\N\AppData\Roaming\Typora\typora-user-images\image-20251112193245162.png)
+![image-20251112193245162](./images/image-20251112193245162.png)
 
 ### 安装napcat
 

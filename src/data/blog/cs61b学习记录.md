@@ -11,7 +11,7 @@ description: ''
 pubDatetime: 2025-10-19T23:00:00Z
 ---
 
-![image-20251016161901606](C:\Users\N\AppData\Roaming\Typora\typora-user-images\image-20251016161901606.png)
+![image-20251016161901606](./images/image-20251016161901606.png)
 
 还能说什么呢，直接泪目。
 

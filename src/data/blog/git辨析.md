@@ -12,15 +12,16 @@ pubDatetime: 2025-09-13T09:00:00Z
 
 ## markdown语法
 
-<img src="D:\图片\rin.jpg" alt="#" width="400">
+<img src="./images/rin.jpg" alt="#" width="400">
 
 <center>
-    <img src="D:\图片\rin.jpg" alt="#" width="400">
+    <img src="./images/rin.jpg" alt="#" width="400">
     <br>
     <div style="color:#C0C0C0;">
         her name is Rin.
     </div>
 </center>
+
 
 - 不知道为什么不能正常使用行内公式的语法`$...$`
 
